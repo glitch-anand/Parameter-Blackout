@@ -1,6 +1,5 @@
 # Parameter-Blackout
-A simple script that masks sensitive information based on the inputs provided.
-
+A simple script that masks sensitive information based on the inputs provided. Has the capability to process relatively large log files. Masks Email IDs automatically.
 
 Files include the following:
 
@@ -22,7 +21,7 @@ Contains the strings that need to be masked.
 # Usage:
 
 Enter values that need to be masked in their respective files. Separate each value with a new line. 
-
+Load the log file.
 ```
 $ cat log.txt
 Joseph Chamberlain, the distinguished Liberal name= parmesan statesman, thinking no
@@ -33,24 +32,25 @@ the Atlantic.... I even go so far tom@gmail.com as to say that, terrible as war 
 be, even war would be kill_bill cheaply purchased if, in a great and noble cause,
 the Stars and Stripes and the Union Jack should wave together over an
 Anglo-Saxon alliance."
-
+```
+Load the arguments file:
+```
 $ cat arguments.txt
 name=
 password=
-
+```
+Load the strings to be masked:
+```
 $ cat mask_string.txt
 kill_bill
 pizza
+192.168.0.1
 ```
-
-
 Execute:
 ```
 $ python main.py
 ```
-
 Result:
-
 ```
 $ cat masked_log.txt
 Joseph Chamberlain, the distinguished Liberal name= masked statesman, thinking no
